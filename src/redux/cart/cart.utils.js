@@ -15,9 +15,9 @@ export const addItemToCart = (cartItems, itemToAdd) => {
 };
 
 export const removeItemFromCart = (cartItems, itemToRemove) => {
-  cartItems.splice(cartItems.indexOf(itemToRemove), 1);
-  return cartItems;
-  //return cartItems.filter(cartItem => cartItem.id !== itemToRemove.id);
+  // cartItems.splice(cartItems.indexOf(itemToRemove), 1);
+  // return cartItems;
+  return cartItems.filter(cartItem => cartItem.id !== itemToRemove.id);
 };
 
 export const increaseQuantityOfItem = (cartItems, itemToIncrease) => {
