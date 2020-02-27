@@ -10,10 +10,10 @@ import {
 import "./checkout.styles.scss";
 
 import CheckoutItem from "../../components/checkout-item/checkout-item.component.jsx";
-import StripeCheckout from "react-stripe-checkout";
+import StripeCheckoutButton from "../../components/stripe-checkout-button/stripe-checkout-button.jsx";
 
 const Checkout = ({ cartItems, cartTotal }) => {
-  return (
+  return cartTotal !== 0 ? (
     <div className="checkout-page">
       <div className="checkout-header">
         <div className="header-block">
@@ -41,8 +41,10 @@ const Checkout = ({ cartItems, cartTotal }) => {
         <span>TOTAL : ₹ {cartTotal}</span>
       </div>
 
-      <StripeCheckout price={cartTotal} />
+      <StripeCheckoutButton price={cartTotal} />
     </div>
+  ) : (
+    <div className="checkout-page">Your sKart is empty</div>
   );
 };
 
